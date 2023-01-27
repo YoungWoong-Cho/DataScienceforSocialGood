@@ -6,6 +6,7 @@ if __name__ == '__main__':
     survey = utils.read_xlsx('./data/survey.xlsx')
     
     # Select data that has small number of categories
+    # Can be replaced by choosing desired columns only (e.g. household size, race, etc)
     unique_answer_thres = 3
     survey = survey[[col for col in survey.columns if len(pd.unique(survey[col])) <= unique_answer_thres]]
     
